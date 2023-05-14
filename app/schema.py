@@ -8,7 +8,7 @@ ma = Marshmallow(app)
 class ETilangSchema(ma.SQLAlchemyAutoSchema):
     class Meta:
         model = ETilang
-        fields = ("plate_numbe", "machine_number", "skeleton_number", "location",
+        fields = ("plate_number", "machine_number", "skeleton_number", "location",
                   "offense_type", "status", "offense_timestamp", "crawl_timestamp")
 
 etilang_schema = ETilangSchema()
