@@ -5,7 +5,7 @@ from app.schema import etilang_schema
 
 from flask import request, jsonify, make_response
 
-@app.route("/api/check", methods=["POST"])
+@app.route("/api/etilang/check", methods=["POST"])
 def check_etilang():
     data = {
         "plate": request.json['plate_number'],
@@ -20,9 +20,6 @@ def check_etilang():
             'status': 404,
         }
         return make_response(jsonify(response))
-
-    etilang = ETilang.query.get(request.json['plate_number'])
-
 
     new_etilang = ETilang(
             plate_number=result.plate_number, machine_number=result.machine_number,
